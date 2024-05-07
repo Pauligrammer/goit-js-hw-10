@@ -1,0 +1,66 @@
+img {
+    width: auto;
+    max-height: 500px;    
+    display: block;
+    margin: 10px;
+    box-shadow: 0px 12px 4px rgba(76, 80, 147, 0.08),
+            0px 4px 4px rgba(138, 88, 93, 0.16),
+            0px 4px 18px rgba(176, 53, 137, 0.08);
+}
+
+.img-box{
+    display: flex;
+    justify-content: space-around;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 60px;
+    background-image: url(../images/pexels-padrinan-255379\ \(1\).jpg);
+}
+
+.hidden {
+    display: none;
+}
+
+.select {
+    display: flex;
+    justify-content: space-around;
+}
+
+.breed-select {
+    width: 25%;
+}
+
+.cat-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+}
+
+h2 {
+    font-size: 72px;
+    color: rgb(49, 32, 2);
+    text-shadow: 0px 6px 2px rgba(46, 47, 66, 0.08),
+        0px 2px 2px rgba(46, 47, 66, 0.16),
+        0px 2px 12px rgba(46, 47, 66, 0.08);
+    text-decoration: underline rgb(45, 205, 233);
+}
+
+.paragraph {
+    font-style: oblique;
+    padding: 50px;
+    max-width: 40%;
+}
+
+.temp {
+    max-width: 30%;
+    font-size: 24px;
+    color: rgb(16, 1, 21);
+}
+
+span {
+    text-decoration: solid underline;
+}
