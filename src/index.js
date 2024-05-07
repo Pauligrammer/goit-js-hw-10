@@ -17,27 +17,23 @@ fetchBreeds()
     })
     .catch(errorTxt => {
         Notiflix.Notify.failure(`${errorTxt}`);
-        errorAppearance();
     });
 
-function errorAppearance() {
-    errorTxt.classList.remove('hidden');
-    loader.classList.add('hidden');
-}
 
 function provideBreedsData(catsBreedData) {
     catsBreedData.map(({ id, name }) => {
         breedsArr.push({ text: name, value: id });
     });
 
-new SlimSelect({
-    select: '.breed-select',
-    data: breedsArr,
-});
 
     loader.classList.remove('hidden');
     errorTxt.classList.add('hidden');
     console.log(catsBreedData);
+
+    new SlimSelect({
+    select: '.breed-select',
+    data: breedsArr,
+});
 }
 
 catBreed.addEventListener('change', ev => {
@@ -46,17 +42,18 @@ catBreed.addEventListener('change', ev => {
         .then(data => provideCatsData(data[0]), errorTxt.classList.add('hidden'))
         .catch(errorTxt => {
             Notiflix.Notify.failure(`${errorTxt}`);
-            errorAppearance();
             catInfo.innerHTML = '';
         });
 });
 
 function provideCatsData(catData) {
+    loader.classList.add('hidden');
+
     const { url } = catData;
     const { name, description, temperament } = catData.breeds[0];
 
     catInfo.innerHTML = '';
     catInfo.insertAdjacentHTML('beforeend', `<div class="cat-box"><h2>${name}</h2><div class="img-box"><img src=${url} alt="cat"/></div><div class="paragraph"><p>${description}</p></div><div class="temp"><span>Temperament:</span> ${temperament}</div></div>`);
 
-    loader.classList.add('hidden');
+    
 }
